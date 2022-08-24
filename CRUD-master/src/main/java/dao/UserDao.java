@@ -1,10 +1,10 @@
-package service;
+package dao;
 
 import models.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
     List<User> getUsers();
     User getUser(Long id);
     void save(User user);
