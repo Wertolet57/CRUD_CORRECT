@@ -5,13 +5,16 @@ import dao.UserDaoImpl;
 import models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@Component("userService")
 @ComponentScan("dao")
 public class UserServiceImpl implements UserService {
-    UserDao userDao;
+    private UserDao userDao;
     @Autowired
     public UserServiceImpl(UserDao userDAO) {
         this.userDao = userDAO;
@@ -25,15 +28,15 @@ public class UserServiceImpl implements UserService {
         return userDao.getUser(id);
     }
     @Override
-    public void save(User user) {
-        userDao.save(user);
+    public void saveUser(User user) {
+        userDao.saveUser(user);
     }
     @Override
-    public void update(User user) {
-        userDao.update(user);
+    public void updateUser(User user) {
+        userDao.updateUser(user);
     }
     @Override
-    public void delete(Long id) {
-        userDao.delete(id);
+    public void deleteUser(Long id) {
+        userDao.deleteUser(id);
     }
 }

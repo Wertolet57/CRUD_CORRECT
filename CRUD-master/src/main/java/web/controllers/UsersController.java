@@ -7,11 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import service.UserService;
-import service.UserServiceImpl;
 
 @Controller
-@ComponentScan("service")
 @RequestMapping("/users")
+@ComponentScan("service")
 public class UsersController {
 
     private final UserService userService;
@@ -31,23 +30,23 @@ public class UsersController {
         return "new";
     }
     @PostMapping()
-    public String create(@ModelAttribute("user") User user) {
-        userService.save(user);
+    public String createUser(@ModelAttribute("user") User user) {
+        userService.saveUser(user);
         return "redirect:/users";
     }
     @GetMapping("/{id}/edit")
-    public String edit(Model model, @PathVariable("id") Long id) {
+    public String editUser(Model model, @PathVariable("id") Long id) {
         model.addAttribute("user", userService.getUser(id));
         return "edit";
     }
     @PatchMapping("/{id}")
-    public String update(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
-        userService.update(user);
+    public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
+        userService.updateUser(user);
         return "redirect:/users";
     }
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") Long id) {
-        userService.delete(id);
+    public String deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUser(id);
         return "redirect:/users";
     }
 }
