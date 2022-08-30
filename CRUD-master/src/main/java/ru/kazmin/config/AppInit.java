@@ -1,4 +1,4 @@
-package web.config;
+package ru.kazmin.config;
 
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;

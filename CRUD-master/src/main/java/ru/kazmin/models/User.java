@@ -1,4 +1,4 @@
-package models;
+package ru.kazmin.models;
 
 import javax.persistence.*;
 

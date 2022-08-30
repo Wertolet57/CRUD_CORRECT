@@ -1,4 +1,4 @@
-package web.config;
+package ru.kazmin.config;
 
 import com.mysql.cj.jdbc.Driver;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -28,7 +28,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("web")
+@ComponentScan("ru.kazmin")
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;

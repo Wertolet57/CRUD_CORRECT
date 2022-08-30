@@ -1,16 +1,15 @@
-package web.controllers;
+package ru.kazmin.controllers;
 
-import models.User;
+import ru.kazmin.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import service.UserService;
+import ru.kazmin.service.UserService;
 
 @Controller
 @RequestMapping("/users")
-@ComponentScan("service")
 public class UsersController {
 
     private final UserService userService;

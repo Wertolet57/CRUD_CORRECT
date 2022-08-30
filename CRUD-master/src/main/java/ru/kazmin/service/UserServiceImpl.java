@@ -1,18 +1,16 @@
-package service;
+package ru.kazmin.service;
 
-import dao.UserDao;
-import dao.UserDaoImpl;
-import models.User;
+import ru.kazmin.dao.UserDao;
+import ru.kazmin.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 @Component("userService")
-@ComponentScan("dao")
+@ComponentScan("ru.kazmin.dao")
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
     @Autowired

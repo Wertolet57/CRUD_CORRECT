@@ -1,6 +1,6 @@
-package dao;
+package ru.kazmin.dao;
 
-import models.User;
+import ru.kazmin.models.User;
 
 import java.util.List;
 
